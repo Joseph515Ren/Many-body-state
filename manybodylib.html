@@ -1,0 +1,575 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module manybodylib</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>manybodylib</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:d%3A%5Cdocument%5Cpython%20scripts%5Csinglebody%5Clib%5Cmanybodylib.py">d:\document\python scripts\singlebody\lib\manybodylib.py</a></font></td></tr></table>
+    <p><tt>Module&nbsp;for&nbsp;many-body&nbsp;state<br>
+11/30/2018</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="scipy.sparse.linalg.html">scipy.sparse.linalg</a><br>
+<a href="math.html">math</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+<a href="scipy.sparse.html">scipy.sparse</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="manybodylib.html#spinchain">spinchain</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="spinchain">class <strong>spinchain</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;for&nbsp;many-body&nbsp;state&nbsp;of&nbsp;spin&nbsp;chain<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="spinchain-S_ent"><strong>S_ent</strong></a>(self, *arg, sec='left')</dt><dd><tt>Entanglement&nbsp;entropy<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+*arg&nbsp;:&nbsp;list&nbsp;of&nbsp;arguments<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Section&nbsp;specific&nbsp;arguments,&nbsp;see&nbsp;reduced&nbsp;matrix&nbsp;part<br>
+sec&nbsp;:&nbsp;string,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Section&nbsp;of&nbsp;sub-system.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Choose&nbsp;from&nbsp;['left','right','middle','outer']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+S&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Entanglement&nbsp;entropy</tt></dd></dl>
+
+<dl><dt><a name="spinchain-__call__"><strong>__call__</strong></a>(self, jx=0, jy=0, jz=0, hx=0, hy=0, hz=0, **arg)</dt><dd><tt>Create&nbsp;a&nbsp;spin&nbsp;chain&nbsp;Hamiltonian&nbsp;for&nbsp;the&nbsp;class&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+jx&nbsp;:&nbsp;float/[n]&nbsp;array,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Spin&nbsp;interaction&nbsp;in&nbsp;x&nbsp;direction<br>
+jy&nbsp;:&nbsp;float/[n]&nbsp;array,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Spin&nbsp;interaction&nbsp;in&nbsp;y&nbsp;direction<br>
+jz&nbsp;:&nbsp;float/[n]&nbsp;array,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Spin&nbsp;interaction&nbsp;in&nbsp;z&nbsp;direction<br>
+hx&nbsp;:&nbsp;float/[n]&nbsp;array,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Transverse&nbsp;field&nbsp;in&nbsp;x&nbsp;direction<br>
+hy&nbsp;:&nbsp;float/[n]&nbsp;array,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Transverse&nbsp;field&nbsp;in&nbsp;y&nbsp;direction<br>
+hz&nbsp;:&nbsp;float/[n]&nbsp;array,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Transverse&nbsp;field&nbsp;in&nbsp;z&nbsp;direction</tt></dd></dl>
+
+<dl><dt><a name="spinchain-__init__"><strong>__init__</strong></a>(self, H=None)</dt><dd><tt>Initiate&nbsp;the&nbsp;spin&nbsp;chain&nbsp;state<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+H&nbsp;:&nbsp;[n,n]&nbsp;(sparse)&nbsp;matrix,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Spin&nbsp;chain&nbsp;Hamiltonian</tt></dd></dl>
+
+<dl><dt><a name="spinchain-evo"><strong>evo</strong></a>(self, t)</dt><dd><tt>Evolve&nbsp;the&nbsp;state<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+t&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Evolving&nbsp;time</tt></dd></dl>
+
+<dl><dt><a name="spinchain-evom"><strong>evom</strong></a>(self, ts, te, n)</dt><dd><tt>State&nbsp;evolving&nbsp;for&nbsp;multiple&nbsp;time<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+ts&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Start&nbsp;time<br>
+te&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;time<br>
+n:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Time&nbsp;division<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+out&nbsp;:&nbsp;[n,dim]&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Stack&nbsp;of&nbsp;vector&nbsp;after&nbsp;multiple&nbsp;evolving&nbsp;times</tt></dd></dl>
+
+<dl><dt><a name="spinchain-rand"><strong>rand</strong></a>(self)</dt><dd><tt>Give&nbsp;a&nbsp;random&nbsp;state</tt></dd></dl>
+
+<dl><dt><a name="spinchain-redmat"><strong>redmat</strong></a>(self, *arg, sec='left')</dt><dd><tt>Reduced&nbsp;density&nbsp;matrix<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+*arg&nbsp;:&nbsp;list&nbsp;of&nbsp;arguments<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Section&nbsp;specific&nbsp;arguments,&nbsp;see&nbsp;reduced&nbsp;matrix&nbsp;part<br>
+sec&nbsp;:&nbsp;string,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Section&nbsp;of&nbsp;sub-system.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Choose&nbsp;from&nbsp;['left','right','middle','outer']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+out&nbsp;:&nbsp;[m,m]&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Reduced&nbsp;density&nbsp;matrix</tt></dd></dl>
+
+<dl><dt><a name="spinchain-setvec"><strong>setvec</strong></a>(self, v, kink=False)</dt><dd><tt>Set&nbsp;the&nbsp;vector&nbsp;to&nbsp;be&nbsp;an&nbsp;product&nbsp;state<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+v&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Index&nbsp;of&nbsp;many-body&nbsp;basis<br>
+kink:&nbsp;bool/int/list,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Give&nbsp;a&nbsp;kink&nbsp;state&nbsp;if&nbsp;given&nbsp;a&nbsp;list</tt></dd></dl>
+
+<dl><dt><a name="spinchain-spin"><strong>spin</strong></a>(self)</dt><dd><tt>Return&nbsp;spin&nbsp;expectation&nbsp;of&nbsp;each&nbsp;site</tt></dd></dl>
+
+<dl><dt><a name="spinchain-spinz"><strong>spinz</strong></a>(self)</dt><dd><tt>Return&nbsp;spin-z&nbsp;expectation&nbsp;of&nbsp;each&nbsp;site</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-Hfermion"><strong>Hfermion</strong></a>(A, B, C=None, **kwd)</dt><dd><tt>Hamiltonian&nbsp;for&nbsp;fermion&nbsp;model&nbsp;with&nbsp;hopping,&nbsp;pairing&nbsp;and&nbsp;density&nbsp;interaction<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+A&nbsp;:&nbsp;[n,n]&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Hopping&nbsp;matrix<br>
+B&nbsp;:&nbsp;[n,n]&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pairing&nbsp;matrix<br>
+C&nbsp;:&nbsp;[n,n]&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Interaction&nbsp;matrix<br>
+**kwd:&nbsp;str,&nbsp;keyword<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'check'&nbsp;:&nbsp;bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whether&nbsp;do&nbsp;the&nbsp;check<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+H:&nbsp;[2**n,2**n]&nbsp;sparse&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Operator&nbsp;in&nbsp;whole&nbsp;space</tt></dd></dl>
+ <dl><dt><a name="-Hspin"><strong>Hspin</strong></a>(jx=0, jy=0, jz=0, hx=0, hy=0, hz=0, **arg)</dt><dd><tt>Hamiltonian&nbsp;for&nbsp;nearest&nbsp;interaction&nbsp;spin&nbsp;chain&nbsp;with&nbsp;transverse&nbsp;field.<br>
+&nbsp;<br>
+Return&nbsp;sparse&nbsp;matrix&nbsp;for&nbsp;many-body&nbsp;Hamiltonian.<br>
+&nbsp;<br>
+Note&nbsp;this&nbsp;function&nbsp;change&nbsp;the&nbsp;module's&nbsp;global&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;base&nbsp;-&gt;&nbsp;2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dtype&nbsp;-&gt;&nbsp;float<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+jx&nbsp;:&nbsp;float/[n]&nbsp;array,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Spin&nbsp;interaction&nbsp;in&nbsp;x&nbsp;direction<br>
+jy&nbsp;:&nbsp;float/[n]&nbsp;array,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Spin&nbsp;interaction&nbsp;in&nbsp;y&nbsp;direction<br>
+jz&nbsp;:&nbsp;float/[n]&nbsp;array,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Spin&nbsp;interaction&nbsp;in&nbsp;z&nbsp;direction<br>
+hx&nbsp;:&nbsp;float/[n]&nbsp;array,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Transverse&nbsp;field&nbsp;in&nbsp;x&nbsp;direction<br>
+hy&nbsp;:&nbsp;float/[n]&nbsp;array,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Transverse&nbsp;field&nbsp;in&nbsp;y&nbsp;direction<br>
+hz&nbsp;:&nbsp;float/[n]&nbsp;array,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Transverse&nbsp;field&nbsp;in&nbsp;z&nbsp;direction<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+H:&nbsp;[2**n,2**n]&nbsp;sparse&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Many-body&nbsp;Hamiltonian</tt></dd></dl>
+ <dl><dt><a name="-empty"><strong>empty</strong></a>(n)</dt><dd><tt>Empty&nbsp;matrix&nbsp;for&nbsp;n&nbsp;particle&nbsp;Hilbert&nbsp;space<br>
+&nbsp;<br>
+Return&nbsp;sparse&nbsp;empty&nbsp;matrix.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+n&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;particles<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+out&nbsp;:&nbsp;[base**n,base**n]&nbsp;(sparse)&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Empty&nbsp;operator&nbsp;in&nbsp;whole&nbsp;space</tt></dd></dl>
+ <dl><dt><a name="-entropy"><strong>entropy</strong></a>(rho)</dt><dd><tt>Entanglement&nbsp;entropy<br>
+&nbsp;<br>
+Return&nbsp;entanglement&nbsp;entropy&nbsp;of&nbsp;reduced&nbsp;density&nbsp;matrix.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+rho&nbsp;:&nbsp;[n,n]&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Reduced&nbsp;density&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+out&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Entanglement&nbsp;entropy</tt></dd></dl>
+ <dl><dt><a name="-evo"><strong>evo</strong></a>(H, v, t)</dt><dd><tt>Evolving&nbsp;vector&nbsp;in&nbsp;Herbert&nbsp;space<br>
+&nbsp;<br>
+Return&nbsp;evolved&nbsp;vector&nbsp;in&nbsp;Hilbert&nbsp;space&nbsp;after&nbsp;time&nbsp;t.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+H&nbsp;:&nbsp;[n,n]&nbsp;(sparse)&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Hamiltonion<br>
+v&nbsp;:&nbsp;[n]&nbsp;vector/matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Vector&nbsp;of&nbsp;Hilbert&nbsp;space<br>
+t&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Evolving&nbsp;time<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+out&nbsp;:&nbsp;[n]&nbsp;vector<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Vector&nbsp;after&nbsp;evolving&nbsp;time&nbsp;t</tt></dd></dl>
+ <dl><dt><a name="-evom"><strong>evom</strong></a>(H, v, start, end, num)</dt><dd><tt>Multiple&nbsp;vector&nbsp;evolving<br>
+&nbsp;<br>
+Return&nbsp;stack&nbsp;of&nbsp;vectors&nbsp;in&nbsp;Hilbert&nbsp;space&nbsp;after&nbsp;multiple&nbsp;evolving&nbsp;times.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+H&nbsp;:&nbsp;[n,n]&nbsp;(sparse)&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Hamiltonion<br>
+v&nbsp;:&nbsp;[n]&nbsp;vector/matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Vector&nbsp;of&nbsp;Hilbert&nbsp;space<br>
+start&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Start&nbsp;time<br>
+end:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;time<br>
+num:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;division<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+out:&nbsp;[num,n]&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Stack&nbsp;of&nbsp;vector&nbsp;after&nbsp;multiple&nbsp;evolving&nbsp;times</tt></dd></dl>
+ <dl><dt><a name="-fm"><strong>fm</strong></a>(i, n)</dt><dd><tt>Fermion&nbsp;annihilation&nbsp;matrix&nbsp;in&nbsp;many-body&nbsp;space<br>
+&nbsp;<br>
+Return&nbsp;kronecker&nbsp;product&nbsp;of&nbsp;Fermion&nbsp;annihilation&nbsp;operator&nbsp;on&nbsp;site&nbsp;i&nbsp;and&nbsp;<br>
+identity&nbsp;operator&nbsp;on&nbsp;other&nbsp;sites.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+i&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Index&nbsp;of&nbsp;the&nbsp;operator<br>
+n&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;particles<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+out:&nbsp;[2**n,2**n]&nbsp;sparse&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Operator&nbsp;in&nbsp;whole&nbsp;space</tt></dd></dl>
+ <dl><dt><a name="-fn"><strong>fn</strong></a>(i, n)</dt><dd><tt>Fermion&nbsp;occupation&nbsp;matrix&nbsp;in&nbsp;many-body&nbsp;space<br>
+&nbsp;<br>
+Return&nbsp;kronecker&nbsp;product&nbsp;of&nbsp;Fermion&nbsp;occupation&nbsp;operator&nbsp;on&nbsp;site&nbsp;i&nbsp;and&nbsp;<br>
+identity&nbsp;operator&nbsp;on&nbsp;other&nbsp;sites.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+i&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Index&nbsp;of&nbsp;the&nbsp;operator<br>
+n&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;particles<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+out:&nbsp;[2**n,2**n]&nbsp;sparse&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Operator&nbsp;in&nbsp;whole&nbsp;space</tt></dd></dl>
+ <dl><dt><a name="-fp"><strong>fp</strong></a>(i, n)</dt><dd><tt>Fermion&nbsp;creation&nbsp;matrix&nbsp;in&nbsp;many-body&nbsp;space<br>
+&nbsp;<br>
+Return&nbsp;kronecker&nbsp;product&nbsp;of&nbsp;Fermion&nbsp;creation&nbsp;operator&nbsp;on&nbsp;site&nbsp;i&nbsp;and&nbsp;identity&nbsp;<br>
+operator&nbsp;on&nbsp;other&nbsp;sites.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+i&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Index&nbsp;of&nbsp;the&nbsp;operator<br>
+n&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;particles<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+out:&nbsp;[2**n,2**n]&nbsp;sparse&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Operator&nbsp;in&nbsp;whole&nbsp;space</tt></dd></dl>
+ <dl><dt><a name="-idn"><strong>idn</strong></a>(n, form='coo')</dt><dd><tt>Identity&nbsp;matrix&nbsp;for&nbsp;n&nbsp;particle&nbsp;Hilbert&nbsp;space<br>
+&nbsp;<br>
+Return&nbsp;sparse&nbsp;diagnal&nbsp;matrix.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+n&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;particles<br>
+form&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Sparse&nbsp;format&nbsp;of&nbsp;the&nbsp;result,&nbsp;default&nbsp;=&nbsp;COOrdinate&nbsp;format<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+out&nbsp;:&nbsp;[base**n,base**n]&nbsp;(sparse)&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Identity&nbsp;operator&nbsp;in&nbsp;whole&nbsp;space</tt></dd></dl>
+ <dl><dt><a name="-mesure"><strong>mesure</strong></a>(v)</dt><dd><tt>Average&nbsp;of&nbsp;occupation&nbsp;of&nbsp;each&nbsp;quantum&nbsp;state&nbsp;on&nbsp;each&nbsp;site<br>
+&nbsp;<br>
+Return&nbsp;expectation&nbsp;of&nbsp;each&nbsp;quantum&nbsp;state&nbsp;of&nbsp;each&nbsp;particle.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+v&nbsp;:&nbsp;[...,n]&nbsp;vector/matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Vector&nbsp;(stack&nbsp;of&nbsp;vectors)&nbsp;of&nbsp;Hilbert&nbsp;space<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+out&nbsp;:&nbsp;[...,n,l]&nbsp;array<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Expectation&nbsp;of&nbsp;each&nbsp;quantum&nbsp;state&nbsp;of&nbsp;each&nbsp;particle</tt></dd></dl>
+ <dl><dt><a name="-num"><strong>num</strong></a>(v)</dt><dd><tt>Number&nbsp;of&nbsp;particles<br>
+&nbsp;<br>
+Return&nbsp;number&nbsp;of&nbsp;particles&nbsp;from&nbsp;a&nbsp;vector&nbsp;in&nbsp;Hilbert&nbsp;space<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+v&nbsp;:&nbsp;[n]&nbsp;vector<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Reduced&nbsp;density&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+n&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;particles</tt></dd></dl>
+ <dl><dt><a name="-opn"><strong>opn</strong></a>(op, i, n, form='coo')</dt><dd><tt>Single-body&nbsp;operator&nbsp;in&nbsp;many-body&nbsp;space<br>
+&nbsp;<br>
+Return&nbsp;kronecker&nbsp;product&nbsp;of&nbsp;single-body&nbsp;operator&nbsp;on&nbsp;site&nbsp;i&nbsp;and&nbsp;identity<br>
+operator&nbsp;on&nbsp;other&nbsp;sites.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+op&nbsp;:&nbsp;[base,base]&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Single&nbsp;site&nbsp;operator<br>
+i&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Index&nbsp;of&nbsp;the&nbsp;operator<br>
+n&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;particles<br>
+form&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Format&nbsp;of&nbsp;sparse&nbsp;matrix,&nbsp;default&nbsp;=&nbsp;COOrdinate&nbsp;format<br>
+&nbsp;<br>
+Returns<br>
+-------&nbsp;<br>
+out:&nbsp;[base**n,base**N]&nbsp;(sparse)&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Operator&nbsp;in&nbsp;whole&nbsp;space</tt></dd></dl>
+ <dl><dt><a name="-real2vec"><strong>real2vec</strong></a>(i, n)</dt><dd><tt>Convertion&nbsp;from&nbsp;index&nbsp;of&nbsp;many-body&nbsp;state&nbsp;to&nbsp;real&nbsp;occupation&nbsp;state<br>
+&nbsp;<br>
+Return&nbsp;array&nbsp;representing&nbsp;the&nbsp;occupation&nbsp;of&nbsp;each&nbsp;site.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+i&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Index&nbsp;in&nbsp;whole&nbsp;Hilbeert&nbsp;space<br>
+n&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;particles<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+vec:&nbsp;[n]&nbsp;vector<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Occupation<br>
+&nbsp;<br>
+Examples<br>
+--------<br>
+&gt;&gt;&gt;&nbsp;<a href="#-real2vec">real2vec</a>(0,5)<br>
+&gt;&gt;&gt;&nbsp;[0,&nbsp;0,&nbsp;0,&nbsp;0,&nbsp;0]<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-real2vec">real2vec</a>(1,5)<br>
+&gt;&gt;&gt;&nbsp;[0,&nbsp;0,&nbsp;0,&nbsp;0,&nbsp;1]<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-real2vec">real2vec</a>(3,5)<br>
+&gt;&gt;&gt;&nbsp;[0,&nbsp;0,&nbsp;0,&nbsp;1,&nbsp;1]</tt></dd></dl>
+ <dl><dt><a name="-redmatl"><strong>redmatl</strong></a>(v, l)</dt><dd><tt>Reduced&nbsp;density&nbsp;matrix&nbsp;of&nbsp;left&nbsp;sub-system<br>
+&nbsp;<br>
+Return&nbsp;reduced&nbsp;density&nbsp;matrix.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+v&nbsp;:&nbsp;[n]&nbsp;vector<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Pure&nbsp;state&nbsp;in&nbsp;Hilbert&nbsp;space<br>
+l&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;particles&nbsp;of&nbsp;left&nbsp;subsystem<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+out&nbsp;:&nbsp;[l,l]&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Reduced&nbsp;density&nbsp;matrix</tt></dd></dl>
+ <dl><dt><a name="-redmatm"><strong>redmatm</strong></a>(v, start, l)</dt><dd><tt>Reduced&nbsp;density&nbsp;matrix&nbsp;of&nbsp;middle&nbsp;sub-system<br>
+&nbsp;<br>
+Return&nbsp;reduced&nbsp;density&nbsp;matrix.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+v&nbsp;:&nbsp;[n]&nbsp;vector<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Pure&nbsp;state&nbsp;in&nbsp;Hilbert&nbsp;space<br>
+start&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Start&nbsp;index&nbsp;of&nbsp;the&nbsp;subsystem<br>
+l&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;particles&nbsp;of&nbsp;middle&nbsp;subsystem<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+out&nbsp;:&nbsp;[l,l]&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Reduced&nbsp;density&nbsp;matrix</tt></dd></dl>
+ <dl><dt><a name="-redmato"><strong>redmato</strong></a>(v, left, right)</dt><dd><tt>Reduced&nbsp;density&nbsp;matrix&nbsp;of&nbsp;outer&nbsp;sub-system.<br>
+&nbsp;<br>
+Return&nbsp;reduced&nbsp;density&nbsp;matrix.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+v&nbsp;:&nbsp;[n]&nbsp;vector<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Pure&nbsp;state&nbsp;in&nbsp;Hilbert&nbsp;space<br>
+left&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;left&nbsp;particles<br>
+right&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;right&nbsp;particles<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+out&nbsp;:&nbsp;[left+right,left+right]&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Reduced&nbsp;density&nbsp;matrix</tt></dd></dl>
+ <dl><dt><a name="-redmatr"><strong>redmatr</strong></a>(v, l)</dt><dd><tt>Reduced&nbsp;density&nbsp;matrix&nbsp;of&nbsp;right&nbsp;sub-system<br>
+&nbsp;<br>
+Return&nbsp;reduced&nbsp;density&nbsp;matrix.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+v&nbsp;:&nbsp;[n]&nbsp;vector<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Pure&nbsp;state&nbsp;in&nbsp;Hilbert&nbsp;space<br>
+l&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;particles&nbsp;of&nbsp;right&nbsp;subsystem<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+out&nbsp;:&nbsp;[l,l]&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Reduced&nbsp;density&nbsp;matrix</tt></dd></dl>
+ <dl><dt><a name="-spin"><strong>spin</strong></a>(v)</dt><dd><tt>Spin&nbsp;messuremeent<br>
+&nbsp;<br>
+Return&nbsp;expectation&nbsp;of&nbsp;spin&nbsp;of&nbsp;each&nbsp;particle.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+v&nbsp;:&nbsp;[...,n]&nbsp;vector/matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Vector&nbsp;(stack&nbsp;of&nbsp;vectors)&nbsp;of&nbsp;Hilbert&nbsp;space<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+out&nbsp;:&nbsp;[...,n,3]&nbsp;array<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Expectation&nbsp;of&nbsp;spin&nbsp;of&nbsp;each&nbsp;particle</tt></dd></dl>
+ <dl><dt><a name="-spinz"><strong>spinz</strong></a>(v)</dt><dd><tt>Spin-z&nbsp;messuremeent<br>
+&nbsp;<br>
+Return&nbsp;expectation&nbsp;of&nbsp;spin-z&nbsp;of&nbsp;each&nbsp;particle.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+v&nbsp;:&nbsp;[...,n]&nbsp;vector/matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Vector&nbsp;(stack&nbsp;of&nbsp;vectors)&nbsp;of&nbsp;Hilbert&nbsp;space<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+out&nbsp;:&nbsp;[...,n,3]&nbsp;array<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Expectation&nbsp;of&nbsp;spin-z&nbsp;of&nbsp;each&nbsp;particle</tt></dd></dl>
+ <dl><dt><a name="-sx"><strong>sx</strong></a>(i, n)</dt><dd><tt>Sx&nbsp;matrix&nbsp;in&nbsp;many-body&nbsp;space<br>
+&nbsp;<br>
+Return&nbsp;kronecker&nbsp;product&nbsp;of&nbsp;Pauli&nbsp;Sx&nbsp;matrix&nbsp;on&nbsp;site&nbsp;i&nbsp;and&nbsp;identity&nbsp;operator<br>
+on&nbsp;other&nbsp;sites.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+i&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Index&nbsp;of&nbsp;the&nbsp;operator<br>
+n&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;particles<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+out:&nbsp;[base**n,base**N]&nbsp;sparse&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Operator&nbsp;in&nbsp;whole&nbsp;space</tt></dd></dl>
+ <dl><dt><a name="-sy"><strong>sy</strong></a>(i, n)</dt><dd><tt>Sy&nbsp;matrix&nbsp;in&nbsp;many-body&nbsp;space<br>
+&nbsp;<br>
+Return&nbsp;kronecker&nbsp;product&nbsp;of&nbsp;Pauli&nbsp;Sy&nbsp;matrix&nbsp;on&nbsp;site&nbsp;i&nbsp;and&nbsp;identity&nbsp;operator<br>
+on&nbsp;other&nbsp;sites.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+i&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Index&nbsp;of&nbsp;the&nbsp;operator<br>
+n&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;particles<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+out:&nbsp;[base**n,base**N]&nbsp;sparse&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Operator&nbsp;in&nbsp;whole&nbsp;space</tt></dd></dl>
+ <dl><dt><a name="-sz"><strong>sz</strong></a>(i, n)</dt><dd><tt>Sz&nbsp;matrix&nbsp;in&nbsp;many-body&nbsp;space<br>
+&nbsp;<br>
+Return&nbsp;kronecker&nbsp;product&nbsp;of&nbsp;Pauli&nbsp;Sz&nbsp;matrix&nbsp;on&nbsp;site&nbsp;i&nbsp;and&nbsp;identity&nbsp;operator<br>
+on&nbsp;other&nbsp;sites.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+i&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Index&nbsp;of&nbsp;the&nbsp;operator<br>
+n&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;particles<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+out:&nbsp;[base**n,base**N]&nbsp;sparse&nbsp;matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Operator&nbsp;in&nbsp;whole&nbsp;space</tt></dd></dl>
+ <dl><dt><a name="-vec2real"><strong>vec2real</strong></a>(v)</dt><dd><tt>Convertion&nbsp;from&nbsp;real&nbsp;occupation&nbsp;state&nbsp;to&nbsp;index&nbsp;of&nbsp;many-body&nbsp;state<br>
+&nbsp;<br>
+Return&nbsp;index&nbsp;of&nbsp;many-body&nbsp;state.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+v&nbsp;:&nbsp;[n]&nbsp;vector<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Array&nbsp;representing&nbsp;the&nbsp;occupation&nbsp;of&nbsp;each&nbsp;site<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+out:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Index&nbsp;of&nbsp;many-body&nbsp;state<br>
+&nbsp;<br>
+Examples<br>
+--------<br>
+&gt;&gt;&gt;&nbsp;<a href="#-vec2real">vec2real</a>([0,0,1,0])<br>
+&gt;&gt;&gt;&nbsp;2<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-vec2real">vec2real</a>([1,0,0,0])<br>
+&gt;&gt;&gt;&nbsp;8<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-vec2real">vec2real</a>([1,0,1,0])<br>
+&gt;&gt;&gt;&nbsp;10</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>MAT_MAX</strong> = 14<br>
+<strong>SPARSE_MAX</strong> = 22<br>
+<strong>base</strong> = 2<br>
+<strong>dtype</strong> = 'c16'</td></tr></table>
+</body></html>
